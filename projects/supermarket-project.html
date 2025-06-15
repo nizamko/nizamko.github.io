@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاري التحميل... | نظامكو</title>
+    <link rel="icon" href="assets/images/nizamko-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* CSS for the loading page (colors from your previous style.css) */
+        :root {
+            --primary-dark: #1A202C;
+            --accent-color: #F7903F;
+            /* Orange */
+            --light-text: #E2E8F0;
+            /* Light grey text */
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            /* Prevent scrollbars */
+        }
+
+        .loading-container {
+            padding: 40px;
+            border-radius: 15px;
+            background-color: rgba(45, 55, 72, 0.8);
+            /* secondary-dark with some transparency */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .loading-container h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .loading-spinner {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid var(--accent-color);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.2s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-message {
+            font-size: 1.2rem;
+            color: var(--light-text);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <h1>جاري تحميل البيانات...</h1>
+        <p class="loading-message">الرجاء الانتظار قليلاً.</p>
+    </div>
+
+    <script>
+        // JavaScript for redirection
+        document.addEventListener('DOMContentLoaded', function () {
+            const redirectDelay = 3000; // 3000 milliseconds = 3 seconds
+
+            setTimeout(function () {
+                window.location.href = '../index.html'; // Redirect to index.html
+            }, redirectDelay);
+        });
+    </script>
+</body>
+
+</html>
